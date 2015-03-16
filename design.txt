@@ -1,4 +1,4 @@
 Models:
-* Catagory
-* Article
-* Comment
+* Catagory name:string:uniq description:text
+* Article name:string:index content:text catagory:references
+* Comment commenter:string content:text article:references

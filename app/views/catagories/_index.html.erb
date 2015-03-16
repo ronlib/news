@@ -1,0 +1,4 @@
+<h2>Catagories:</h2>
+<% Catagory.all.each do |c| %>
+  <p> <%= link_to c.name, catagory_path(c) %> </p>
+<% end %>

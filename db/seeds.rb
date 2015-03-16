@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+catagories = Catagory.create([{name: 'Sports', description: 'Sports stuff'}])
+catagory = Catagory.where(:name => 'Sports').first
+puts catagory.inspect
+Article.create([{name: 'How to become a superstar',
+                          content: 'Just do as best you can.',
+                          catagory: catagory}])
+puts articles.inspect

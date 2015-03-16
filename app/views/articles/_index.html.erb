@@ -1,0 +1,5 @@
+<h2>Articles:</h2>
+<% puts Article.all.inspect %>
+<% Article.all.each do |a| %>
+  <p> <%= link_to a.name, article_path(a) %> </p>
+<% end %>
