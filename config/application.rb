@@ -24,6 +24,6 @@ module News
     config.active_record.raise_in_transactional_callbacks = true
     
     # Base title configuration
-    config.title.base_title = "RNL News"
+    config.x.base_title = "RNL News"
   end
 end

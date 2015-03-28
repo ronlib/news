@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   
-  get 'about' => 'static_pages#about'
+  get 'about' => 'welcome#about'
   
   resources :catagories
   resources :articles

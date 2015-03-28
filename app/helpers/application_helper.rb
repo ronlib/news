@@ -1,8 +1,7 @@
 module ApplicationHelper
-  
-  # Returns the full title  
-  def full_title(page_title = '') 
-    base_title = Rails.configuration.base_title
+  # Returns the full title
+  def full_title(page_title = '')
+    base_title = Rails.configuration.x.base_title
     if page_title.empty?
       base_title
     else
