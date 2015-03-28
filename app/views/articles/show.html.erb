@@ -1,2 +1,4 @@
 <h1> <%= @article.name %> </h1>
 <p> Catagory: <%= link_to @article.catagory.name, catagory_path(@article.catagory) %> </p>
+
+<p> <%= @article.content %> </p>

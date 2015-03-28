@@ -1,3 +1,12 @@
-<h1>Welcome to my news site!</h1>
-<%= render 'catagories/index' %>
-<%= render 'articles/index' %>
+<div class="center jumbotron">
+  <h1>Welcome to my news site!</h1>
+  <h2>This is my first site</h2>
+
+  <%= link_to 'Catagories', :catagories %>
+  <%= link_to 'All articles', :articles %>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+          'http://rubyonrails.org/' %>
