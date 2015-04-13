@@ -6,10 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-catagories = Catagory.create([{name: 'Sports', description: 'Sports stuff'}])
+catagories = Catagory.create([{name: 'Sports', description: 'Sports stuff'}, {name: 'Computers', description: 'Linux, Windows and everything in between'}])
 catagory = Catagory.where(:name => 'Sports').first
-puts catagory.inspect
 Article.create([{name: 'How to become a superstar',
                           content: 'Just do as best you can.',
                           catagory: catagory}])
-puts articles.inspect
+
+catagory = Catagory.where(:name => 'Computers').first
+Article.create([{name: 'How to become a hacker',
+                          content: 'Just do as best you can.',
+                          catagory: catagory}])

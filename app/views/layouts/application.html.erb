@@ -10,6 +10,11 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <ul class="nav nav-tabs">
+          <% Catagory.all.each do |c| %>
+            <li class="nav nav-pills"><%= link_to c.name, catagory_path(c) %></li>
+          <% end %>
+      </ul>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
