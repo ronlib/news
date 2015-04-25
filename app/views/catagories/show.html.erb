@@ -2,8 +2,7 @@
 <p> <%= @catagory.description %> </p>
 
 <% if not @catagory.articles.empty? %>
-  <h2> Articles: </h2>
-  <% @catagory.articles.each do |a| %>  
+  <% @catagory.articles.each do |a| %>
     <p> <%= link_to a.name, article_path(a) %> </p>
   <% end %>
 <% end %>
