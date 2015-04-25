@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   get 'welcome/index'
   
   get 'about' => 'welcome#about'
+  get 'signup' => 'users#new'
   
   resources :catagories
   resources :articles
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
