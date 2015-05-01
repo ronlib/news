@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'welcome/index'
-  
+
   get 'about' => 'welcome#about'
   get 'signup' => 'users#new'
-  
+
   resources :catagories
   resources :articles
   resources :users
