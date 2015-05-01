@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
             { with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/,  \
               message: "allows valid email address only"},  \
             uniqueness: {case_sensitive: false}
+  validates :password, length: { minimum: 6 }
+  has_secure_password
 end

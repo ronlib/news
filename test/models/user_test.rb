@@ -6,7 +6,8 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+    @user = User.new(name: "Example User", email: "user@example.com",
+                     password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -22,17 +23,17 @@ class UserTest < ActiveSupport::TestCase
     @user.email = "bla.com"
     assert_not @user.valid?
   end
-  
+
   test "name should be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
   end
-  
+
   test "email should not be too long" do
     @user.email = "a" * 244 + "@example.com"
     assert_not @user.valid?
   end
-  
+
   test "email validation should accept valid emails" do
     email_addresses = %w(
             user@valid.com
@@ -46,11 +47,24 @@ class UserTest < ActiveSupport::TestCase
       assert @user.valid?, "#{valid_address.inspect} should be valid"
     end
   end
-  
+
   test "email addresses should be unique" do
     duplicate_user = @user.dup
     duplicate_user.email = @user.email.upcase
     @user.save
     assert_not duplicate_user.valid?
   end
+
+  test "password length should be long enough" do
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
+  end
+
+  test "email is saved in lowercase" do
+    @user.email = "FOO@FOOBAR.COM"
+    @user.save
+    @user.reload
+    assert @user.email == @user.email.downcase
+  end
+
 end
