@@ -1,13 +1,13 @@
 class CatagoriesController < ApplicationController
   def index
-    @catagories = Catagory.all    
+    @catagories = Catagory.all
     render '_index'
   end
-  
+
   def new
   end
-  
-  def show        
+
+  def show
     @catagory = Catagory.find(params[:id])
   end
 end
